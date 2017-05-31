@@ -17,6 +17,8 @@
 
 \begin{fmfgraph*}(180,90) %\fmfpen{thick}
   \fmfset{arrow_len}{cm}\fmfset{arrow_ang}{0}
+  %%%% change width of wiggle to make EWKino lines visible
+  \fmfset{wiggly_slope}{75}
   
   %%%%%%%%%%%% Specifying number of inputs/outputs
   \fmfleftn{i}{2}
@@ -29,21 +31,25 @@
   \fmf{fermion,  tension=2., lab=p, label.side=left}{v1,i2}
            
   %%%%%%%%%%%% Produced SUSY particles
-  \fmf{dots, label=\chipm, label.side=left}{v1,v3}
-  \fmf{dots, label=\chimp, label.side=right}{v1,v2}
+  \fmf{plain, label=\chipm, label.side=left}{v1,v3}
+  \fmf{boson}{v1,v3}
+  \fmf{plain, label=\chimp, label.side=right}{v1,v2}
+  \fmf{boson}{v1,v2}
 
   %%%%%%%%%%%%% Decays and vertex circles
   \fmf{photon}{v3,o4} 
   \fmflabel{\PW}{o4}
 
-  \fmf{dots}{v3,o3}
+  \fmf{plain}{v3,o3}
+  \fmf{boson}{v3,o3}
   \fmflabel{\chiz}{o3}
 
   %% 2nd decay
   \fmf{photon}{v2,o1}
   \fmflabel{W$^\mp$}{o1}
  
-  \fmf{dots}{v2,o2}
+  \fmf{plain}{v2,o2}
+  \fmf{boson}{v2,o2}
   \fmflabel{\chiz}{o2}
 
   %% Vertex circles

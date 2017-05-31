@@ -18,6 +18,8 @@
 \begin{fmfgraph*}(180,90) %\fmfpen{thick}
 
   \fmfset{arrow_len}{cm}\fmfset{arrow_ang}{0}
+  %%%% change width of wiggle to make EWKino lines visible
+  \fmfset{wiggly_slope}{75}
 
   %%%%%%%%%%%% Specifying number of inputs/outputs
   \fmfleftn{i}{2}
@@ -37,7 +39,8 @@
   \fmf{fermion}{v2,o1}
   \fmflabel{\anti{q}}{o1}
 
-  \fmf{dots, foreground=black, label=\chipm, label.side=right, label.dist=-13}{v2,v4}
+  \fmf{plain, foreground=black, label=\chipm, label.side=right, label.dist=-13}{v2,v4}
+  \fmf{boson, foreground=black}{v2,v4}
   \fmf{photon}{v4,o2}
 
   \fmflabel{\sGra}{o3}
@@ -47,7 +50,8 @@
   \fmf{fermion}{v3,o6}
   \fmflabel{q}{o6}
 
-  \fmf{dots, foreground=black, label=\chiz, label.side=right, label.dist=2}{v3,v5}
+  \fmf{plain, foreground=black, label=\chiz, label.side=right, label.dist=2}{v3,v5}
+  \fmf{boson, foreground=black}{v3,v5}
   \fmf{photon}{v5,o5}
   \fmflabel{$\gamma$}{o5}
   \fmflabel{\PW}{o2}

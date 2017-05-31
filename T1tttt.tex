@@ -19,6 +19,8 @@
 
 \begin{fmfgraph*}(180,90)
   \fmfset{arrow_len}{cm}\fmfset{arrow_ang}{0}
+  %%%% change width of wiggle to make EWKino lines visible
+  \fmfset{wiggly_slope}{75}
   
   %%%%%%%%%%%% Specifying number of inputs/outputs
   \fmfleftn{i}{2}
@@ -42,14 +44,16 @@
   \fmflabel{\MainQuark}{o2}
   \fmflabel{\chiz}{o3}
   \fmf{fermion}{o1,v3,o2}
-  \fmf{dots}{v3,o3}
+  \fmf{plain}{v3,o3}
+  \fmf{boson}{v3,o3}
 
   %% 2nd decay
   \fmflabel{\chiz}{o4}
   \fmflabel{$\mathrm{\overline{\MainQuark}}$}{o5}
   \fmflabel{\MainQuark}{o6}
   \fmf{fermion}{o5,v2,o6}
-  \fmf{dots}{v2,o4}
+  \fmf{plain}{v2,o4}
+  \fmf{boson}{v2,o4}
 
   %% Vertex circles
   \fmfdot{v2,v3}
