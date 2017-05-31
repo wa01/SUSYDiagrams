@@ -20,8 +20,6 @@
 \begin{fmfgraph*}(180,90) %\fmfpen{thick}
   	\fmfstraight
 \fmfset{arrow_len}{cm}\fmfset{arrow_ang}{0}
-  %%%% change width of wiggle to make EWKino lines visible
-  \fmfset{wiggly_slope}{75}
   
   %%%%%%%%%%%% Specifying number of inputs/outputs
   \fmfleftn{i}{2}
@@ -58,8 +56,7 @@
   %%%%%%%%%%%%% Decays and vertex circles
 
   %%% Top vertex
-  \fmf{plain, label=$\widetilde{\chi}_1^-$,label.dist=+3, label.side=left}{v5,v6}
-  \fmf{boson}_1^-$,label.dist=+3, label.side=left}{v5,v6}
+  \fmf{dots, label=$\widetilde{\chi}_1^-$,label.dist=+3, label.side=left}{v5,v6}
   \fmf{dashes,label=$\tilde{\ell}$,label.dist=-14}{v6,v7}
   	  \fmflabel{$\overline{\rm{b}}$}{o1}
 	  \fmflabel{$\nu$}{o2}
@@ -68,12 +65,10 @@
            \fmf{fermion}{o1,v5}
            \fmf{fermion}{o2,v6}
            \fmf{fermion}{o3,v7}
-           \fmf{plain}{o4,v7}
-           \fmf{boson}{o4,v7}
+           \fmf{dots}{o4,v7}
   
   %%% Bottom vertex
-  \fmf{plain, label=$\widetilde{\chi}_1^+$, label.dist=+3, label.side=right}{v2,v3}
-  \fmf{boson}_1^+$, label.dist=+3, label.side=right}{v2,v3}
+  \fmf{dots, label=$\widetilde{\chi}_1^+$, label.dist=+3, label.side=right}{v2,v3}
   \fmf{dashes,label=$\tilde{\ell}$,label.dist=3}{v3,v4} 
        \fmflabel{$\widetilde{\chi}^{0}_{1}$}{o5}
        \fmflabel{$\ell$}{o6}
@@ -83,8 +78,7 @@
            \fmf{fermion}{o8,v2}
            \fmf{fermion}{o7,v3}
            \fmf{fermion}{o6,v4}
-           \fmf{plain}{o5,v4}
-           \fmf{boson}{o5,v4}
+           \fmf{dots}{o5,v4}
                
   %% Vertex circles
         \fmfdot{v2,v3,v4,v5,v6,v7}
