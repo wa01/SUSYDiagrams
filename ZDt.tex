@@ -1,0 +1,78 @@
+
+%%%%%%%%%%%%%%%%%%%%%% Feynman diagram for T2bb
+
+\documentclass{article}
+
+\input{shared/header.tex}
+
+\def\MainQuark{b}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Document %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\thispagestyle{empty}
+
+
+%%%%%%%% THE NAME OF THE fmffile HAS TO BE ``Feynman<filename>'' TO USE compile.py %%%%%%%%%%%%%%%
+\begin{fmffile}{FeynmanZDt}
+\parbox{300mm}{
+
+\begin{fmfgraph*}(120,90) %\fmfpen{thick}
+  \fmfset{arrow_len}{cm}\fmfset{arrow_ang}{0}
+  
+  %%%%%%%%%%%% Specifying number of inputs/outputs
+  \fmfleftn{i}{2}
+  \fmfrightn{o}{3}
+  \fmflabel{}{i1}
+  \fmflabel{}{i2}
+    
+  \fmfforce{(.4w,.30h)}{v1}
+  \fmfforce{(.4w,.70h)}{v2}
+  %%%%%%%%%%%% Incoming particles (one line)
+  \fmf{fermion,  width=2, tension=2.}{v1,i1}
+  \fmf{fermion,  width=2, tension=2.}{v2,i2}
+
+  %%%%%%%%%%%% ZD
+  \fmf{photon, width=2, label=\Large{\PZ$_D$}, label.side=right}{v1,v3}
+
+  %%%%%%%%%%%% ZD daughters
+  \fmf{fermion, width=2}{o1,v3}
+  \fmf{fermion, width=2}{o2,v3}
+           
+  %%%%%%%%%%%% associated particle
+  \fmf{fermion, width=2}{o3,v2}
+
+
+  \fmflabel{\Large{$\ell^+$}}{o1}
+  \fmflabel{\Large{$\ell^-$}}{o2}
+  \fmflabel{\Large{j,\PW,\PZ,\Ph}}{o3}
+
+  %%%%%%%%%%%% t-channel
+  \fmf{fermion, width=2}{v1,v2}
+
+%  %%%%%%%%%%%%% Decays and vertex circles
+ % \fmf{fermion}{v3,o4} 
+ % \fmflabel{\MainQuark}{o4}
+
+%  \fmf{dots}{v3,o3}
+ % \fmflabel{\chiz}{o3}
+
+  %% 2nd decay
+ % \fmf{fermion}{v2,o1}
+ % \fmflabel{$\mathrm{\overline{\MainQuark}}$}{o1}
+ 
+ % \fmf{dots}{v2,o2}
+ % \fmflabel{\chiz}{o2}
+
+ %% Vertex circles
+ % \fmfdot{v2,v3}
+           
+%  %%%%%%%%%%%% Additional lines on incoming protons and blob
+ % \input{shared/protons.tex}
+
+\end{fmfgraph*}
+       
+}           
+\end{fmffile} 
+
+\end{document}

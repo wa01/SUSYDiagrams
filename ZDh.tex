@@ -1,0 +1,63 @@
+
+%%%%%%%%%%%%%%%%%%%%%% Feynman diagram for T2bbHH
+
+\documentclass{article}
+
+\input{shared/header.tex}
+
+\def\MainQuark{b}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Document %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+\thispagestyle{empty}
+
+
+%%%%%%%% THE NAME OF THE fmffile HAS TO BE ``Feynman<filename>'' TO USE compile.py %%%%%%%%%%%%%%%
+\begin{fmffile}{FeynmanZDh}
+\parbox{300mm}{
+
+\begin{fmfgraph*}(150,90) %\fmfpen{thick}
+  \fmfset{arrow_len}{cm}\fmfset{arrow_ang}{0}
+  
+  %%%%%%%%%%%% Specifying number of inputs/outputs
+  \fmfleftn{i}{1}
+  \fmfrightn{o}{4}
+  \fmflabel{}{i1}
+    
+  \fmfforce{(0.4w,0.5h)}{v1}
+
+  %%%%%%%%%%%% s-channel
+  \fmf{dashes,  width=2, tension=2., lab=\Large{\Ph}}{v1,i1}
+           
+  %%%%%%%%%%%% Produced  particles
+  \fmf{photon, width=2, label=\Large{\PZ}, label.side=left}{v1,v4}
+  \fmf{photon, width=2, label=\Large{\PZ}, label.side=right}{v1,v2}
+  \fmf{photon, width=2, label=\Large{\PZ$_{D}$}, label.side=right}{v2,v3}
+
+  \fmfv{label=\Large{$\epsilon$}, l.dist=4thick, l.angle=45.}{v2}
+  %%%%%%%%%%%%% Decays and vertex circles
+
+  %%% Top vertex
+  \fmf{fermion, width=2}{v4,o4}
+  \fmflabel{\Large{f}}{o4}
+  \fmf{fermion, width=2}{v4,o3}
+  \fmflabel{\Large{$\overline{f}$}}{o3}
+  
+  %%% Bottom vertex
+  \fmf{fermion, width=2}{v3,o2}
+  \fmflabel{\Large{$\ell^+$}}{o2}
+  \fmf{fermion, width=2}{v3,o1}
+  \fmflabel{\Large{$\ell^-$}}{o1}
+  
+  %% Vertex circles
+  \fmfv{decor.shape=circle,decor.filled=full, decor.size=3thick}{v1}
+  \fmfv{decor.shape=circle,decor.filled=hatched, decor.size=4thick}{v2}
+           
+
+\end{fmfgraph*}
+       
+}           
+\end{fmffile} 
+
+\end{document}
